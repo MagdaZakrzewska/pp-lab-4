@@ -1,3 +1,4 @@
+package employees;
 public class Employee {
     
         private String fullName;
@@ -10,7 +11,7 @@ public class Employee {
         }
         
         
-        public String getName() {
+        public String getFullName() {
             return fullName;
         }
         
