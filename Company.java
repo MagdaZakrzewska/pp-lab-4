@@ -14,6 +14,13 @@ public class Company {
         employees[5] = new Manager("Wojciech Piotrowski",5700, 0);
         employees[6] = new Worker("Robert Nowakowski", 4800, "Receptionist");
 
+        int notManager = 0;
+        for (Employee employee : employees) {
+            if (!(employee instanceof Manager)) {
+                notManager++;
+            }
+        }
+
         for (Employee employee : employees) {
             double newSalary = employee.getSalary() + 500;
             employee.setSalary(newSalary);
@@ -22,7 +29,7 @@ public class Company {
         
         for (Employee employee : employees) {
             if (employee instanceof Manager) {
-                ((Manager) employee).setNumberOfSubordinates(2); 
+                ((Manager) employee).setNumberOfSubordinates(notManager); 
                 employee.setSalary(7500);
             }
         }
